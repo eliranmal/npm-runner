@@ -2,7 +2,7 @@
   "name": "npm-runner",
   "version": "0.1.0",
   "description": "runs npm commands via npm's CLI or JS API, at your choice",
-  "main": "npm-runner.js",
+  "main": "./npm-runner.js",
   "optionalDependencies": {
     "npm": "^4.0.2"
   },
