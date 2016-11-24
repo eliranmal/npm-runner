@@ -1,0 +1,20 @@
+# logs
+logs
+*.log
+npm-debug.log*
+
+# runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# dependency directories
+node_modules
+
+# output of 'npm pack'
+*.tgz
+
+# ide files
+.idea
+*.iml

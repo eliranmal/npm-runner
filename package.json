@@ -1,0 +1,28 @@
+{
+  "name": "npm-runner",
+  "version": "0.1.0",
+  "description": "runs npm commands via npm's CLI or JS API, at your choice",
+  "main": "npm-runner.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliranmal/npm-runner.git"
+  },
+  "keywords": [
+    "npm",
+    "runner",
+    "nodejs",
+    "abstraction",
+    "api",
+    "cli",
+    "js"
+  ],
+  "author": "Eliran Malka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eliranmal/npm-runner/issues"
+  },
+  "homepage": "https://github.com/eliranmal/npm-runner#readme"
+}
