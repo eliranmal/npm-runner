@@ -39,12 +39,12 @@ function run(...args) {
     }
 
     let impl = getLocalImpl(localOptions);
-    console.log(`> running "npm ${command}", via the "${impl.name}" API, with options ${JSON.stringify(localOptions)}`);
+    //console.log(`> running "npm ${command}", via the "${impl.name}" API, with options ${JSON.stringify(localOptions)}`);
     // even lazier loading! todo - brag about it in the docs some more
     impl.run(command, localOptions, callback);
 }
 
-function getLocalImpl (localOptions) {
+function getLocalImpl(localOptions) {
     let impl;
     let name = config.resolve('api', localOptions);
     if (name !== globalImpl.name) {
