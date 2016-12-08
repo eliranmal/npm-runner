@@ -8,17 +8,21 @@ let globalImpl;
 
 function init(globalOptions = {}) {
     config.globals = globalOptions;
-    // lazy loading! todo - brag about it in the docs
-    globalImpl = factory.load(config.resolve('api'));
+    globalImpl = factory.create(config.resolve('api'));
     return run;
 }
 
 function run(...args) {
+    let opts = parseOptions(args);
+    let impl = getImpl(opts.localOptions);
+    impl.run(opts.command, opts.localOptions, opts.callback);
+}
+
+function parseOptions(args) {
 
     let callback = args.pop();
     if (!callback || typeof callback !== 'function') {
-        console.error(new Error('callback must be provided as the last argument'));
-        return;
+        throw new Error('callback must be provided as the last argument');
     }
 
     let localOptions;
@@ -34,21 +38,21 @@ function run(...args) {
 
     let command = args.shift();
     if (!command) {
-        console.error(new Error('command must be provided as the first argument'));
-        return;
+        throw new Error('command must be provided as the first argument');
     }
 
-    let impl = getLocalImpl(localOptions);
-    //console.log(`> running "npm ${command}", via the "${impl.name}" API, with options ${JSON.stringify(localOptions)}`);
-    // even lazier loading! todo - brag about it in the docs some more
-    impl.run(command, localOptions, callback);
+    return {
+        command: command,
+        localOptions: localOptions,
+        callback: callback
+    }
 }
 
-function getLocalImpl(localOptions) {
+function getImpl(localOptions) {
     let impl;
     let name = config.resolve('api', localOptions);
     if (name !== globalImpl.name) {
-        impl = factory.load(name);
+        impl = factory.create(name);
     } else {
         impl = globalImpl;
     }
