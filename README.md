@@ -27,7 +27,7 @@ npm i npm-runner --no-optional
 initializes an npm-runner implementation and returns a runner function 
 to call with npm commands.
 
-_**`globalOptions` [`{Options}`][3]** (optional) global options that 
+_**`globalOptions`** [`{Options}`][3] (optional) global options that 
 will be applied by default on every invocation of the runner._  
 _**Returns:** `{Function}` a [`run()`][1] function that is bound to 
 the passed options._  
@@ -37,11 +37,11 @@ the passed options._
 
 invokes an npm command. available only after initialization.
 
-_**`command` `{String}`** an npm command to run, e.g. `install -D`._  
-_**`localOptions` [`{Options}`][3]** (optional) local options that 
+_**`command`** `{String}` an npm command to run, e.g. `install -D`._  
+_**`localOptions`** [`{Options}`][3] (optional) local options that 
 will be applied to the current invocation only, and override the global 
 options passed on [`init()`][2]._  
-_**`callback` `{Function}`** a callback that will be called when 
+_**`callback`** `{Function}` a callback that will be called when 
 the npm command execution is finished. it receives two arguments: `err` 
 and `output`. `err` is any raised error, and `output` is the command 
 output, broken down to an array of output lines._  
