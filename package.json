@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "runs npm commands via npm's CLI or JS API, at your choice",
   "main": "./npm-runner.js",
+  "files": [
+    "lib",
+    "npm-runner.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "bin/release.sh",
