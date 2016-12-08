@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "description": "runs npm commands via npm's CLI or JS API, at your choice",
   "main": "./npm-runner.js",
-  "optionalDependencies": {
-    "npm": "^4.0.2"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "bin/release.sh",
+    "patch": "npm version patch && npm run release",
+    "minor": "npm version minor && npm run release",
+    "major": "npm version major && npm run release"
   },
   "engines": {
     "node": ">=6.9.1",
@@ -20,7 +21,6 @@
   "keywords": [
     "npm",
     "runner",
-    "nodejs",
     "abstraction",
     "api",
     "cli",
@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/eliranmal/npm-runner/issues"
   },
-  "homepage": "https://github.com/eliranmal/npm-runner#readme"
+  "homepage": "https://github.com/eliranmal/npm-runner#readme",
+  "optionalDependencies": {
+    "npm": "^4.0.2"
+  }
 }
