@@ -34,7 +34,7 @@ _**Returns:** `{Function}` a [`run()`][1] function that is bound to
 the passed options._  
 
 
-#### `run(command, [localOptions], callback)`
+### `run(command, [localOptions], callback)`
 
 invokes an npm command. available only after initialization.
 
@@ -48,7 +48,7 @@ and `output`. `err` is any raised error, and `output` is the command
 output, broken down to an array of output lines._  
 
 
-#### `Options`
+### `Options`
 
 _**Type:** `Object<*>`_  
 
@@ -56,7 +56,7 @@ instructions to apply globally (when passed to [`init()`][2]), or for
 a specific npm invocation (when passed to [`run()`][1]).
 
 
-##### `api`
+#### `api`
 
 _**Type:** `String`_  
 _**Default value:** `'cli'`_  
@@ -68,7 +68,7 @@ module javascript API (requires `npm` as a local npm dependency), while
 the terminal.
 
 
-##### `tee`
+#### `tee`
 
 _**Type:** `Boolean`_  
 _**Default value:** `false`_  
@@ -78,7 +78,7 @@ whether to pipe the npm command output to stdout (in any case, the
 output will be sent to the [`run()`][1] callback).
 
 
-##### `cwd`
+#### `cwd`
 
 _**Type:** `String|Path`_  
 _**Default value:** `''`_  
@@ -88,7 +88,7 @@ the directory to execute the npm command from (at the moment it's only
 used by the CLI API).
 
 
-##### `ignoreErrors`
+#### `ignoreErrors`
 
 _**Type:** `Array<String>`_  
 _**Default value:** `[]`_  
@@ -98,7 +98,7 @@ don't fail the execution when any of these terms are found in error
 messages of the npm command output.
 
 
-##### `globalFlags` (TBD)
+#### `globalFlags` (TBD)
 
 _**Type:** `Array<String>`_  
 _**Default value:** `[]`_  
