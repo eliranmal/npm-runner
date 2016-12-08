@@ -149,6 +149,36 @@ npm('update', {
 ```
 
 
+### ignore errors from the command stderr
+
+here, the `done` callback will be called with no errors, even if some 
+`extraneous` errors slipped to the stderr.
+ 
+```javascript
+const npm = require('npm-runner').init({
+    ignoreErrors: [
+        'extraneous'
+    ]
+});
+
+npm('list', done);
+```
+
+
+### use parseable output to get the local path of an npm module
+
+```javascript
+const npm = require('npm-runner').init();
+const packageName = 'npm-runner';
+
+npm(`list ${packageName} --parseable --long --silent`, (err, parseableOutput) => {
+    let output = parseableOutput.shift();
+    if (output) {
+        let path = output.split(':').shift();
+        console.log(`${packageName}'s path is "${path}"`);
+    }
+});
+```
 
 
 
