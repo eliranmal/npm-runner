@@ -29,6 +29,7 @@ to call with npm commands.
 
 _**`globalOptions`** [`{Options}`][3] (optional) global options that 
 will be applied by default on every invocation of the runner._  
+
 _**Returns:** `{Function}` a [`run()`][1] function that is bound to 
 the passed options._  
 
