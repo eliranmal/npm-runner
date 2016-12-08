@@ -1,6 +1,6 @@
 {
   "name": "npm-runner",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "runs npm commands via npm's CLI or JS API, at your choice",
   "main": "./npm-runner.js",
   "files": [
