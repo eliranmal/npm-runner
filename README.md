@@ -27,7 +27,7 @@ npm i npm-runner --no-optional
 initializes an npm-runner implementation and returns a runner function 
 to call with npm commands.
 
-_**Param:** [`{Options}`][3] `globalOptions` (optional) global options that 
+_**`globalOptions` [`{Options}`][3]** (optional) global options that 
 will be applied by default on every invocation of the runner._  
 _**Returns:** `{Function}` a [`run()`][1] function that is bound to 
 the passed options._  
@@ -37,23 +37,23 @@ the passed options._
 
 invokes an npm command. available only after initialization.
 
-_**Param:** `{String}` `command` an npm command to run, e.g. `install -D`._  
-_**Param:** [`{Options}`][3] `localOptions` (optional) local options that 
+_**`command` `{String}`** an npm command to run, e.g. `install -D`._  
+_**`localOptions` [`{Options}`][3]** (optional) local options that 
 will be applied to the current invocation only, and override the global 
 options passed on [`init()`][2]._  
-_**Param:** `{Function}` `callback` a callback that will be called when 
+_**`callback` `{Function}`** a callback that will be called when 
 the npm command execution is finished. it receives two arguments: `err` 
 and `output`. `err` is any raised error, and `output` is the command 
 output, broken down to an array of output lines._  
 
 
-### `Options`
+### Options
 
 instructions to that apply globally (when passed to [`init()`][2]), 
 or in a specific npm invocation (when passed to [`run()`][1]).
 
 
-#### `options.api`
+#### api
 
 _**Type:** `String`_  
 _**Default value:** `'cli'`_  
@@ -65,7 +65,7 @@ module javascript API (requires `npm` as a local npm dependency), while
 the terminal.
 
 
-#### `options.tee`
+#### tee
 
 _**Type:** `Boolean`_  
 _**Default value:** `false`_  
@@ -75,7 +75,7 @@ whether to pipe the npm command output to stdout (in any case, the
 output will be sent to the [`run()`][1] callback).
 
 
-#### `options.tee`
+#### cwd
 
 _**Type:** `String|Path`_  
 _**Default value:** `''`_  
@@ -85,7 +85,7 @@ the directory to execute the npm command from (at the moment it's only
 used by the CLI API).
 
 
-#### `options.ignoreErrors`
+#### ignoreErrors
 
 _**Type:** `Array<String>`_  
 _**Default value:** `[]`_  
@@ -95,7 +95,7 @@ don't fail the execution when any of these terms are found in error
 messages of the npm command output.
 
 
-#### `options.globalFlags` (TBD)
+#### globalFlags (TBD)
 
 _**Type:** `Array<String>`_  
 _**Default value:** `[]`_  
@@ -109,8 +109,8 @@ if you always want to use the command output as an object.
 
 
 
-[1]: #run-command-localoptions-callback
-[2]: #init-globaloptions
+[1]: #runcommand-localoptions-callback
+[2]: #initglobaloptions
 [3]: #options
 [4]: https://img.shields.io/npm/v/npm-runner.svg?style=flat-square
 [5]: https://www.npmjs.com/package/npm-runner
