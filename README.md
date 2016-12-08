@@ -109,6 +109,49 @@ here if you intend to dissect the output of every command, or `'json'`
 if you always want to use the command output as an object.
 
 
+## examples
+
+
+### use global options
+
+```javascript
+const npm = require('npm-runner').init({
+    tee: true
+});
+
+npm('update', done);
+```
+
+
+### use command options
+
+```javascript
+const npm = require('npm-runner').init();
+
+npm('link npm-runner', {
+    cwd: path.resolve(__dirname)
+}, done);
+```
+
+
+### switch APIs
+
+```javascript
+const npm = require('npm-runner').init({
+    api: 'javascript'
+});
+
+npm('update', done);
+
+npm('update', {
+    api: 'cli'
+}, done);
+```
+
+
+
+
+
 
 
 
