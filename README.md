@@ -2,6 +2,8 @@
 
 > runs npm commands via npm's CLI or JS API, at your choice
 
+[![NPM][4]][5]
+
 
 ## installation
 
@@ -110,3 +112,5 @@ if you always want to use the command output as an object.
 [1]: #run-command-localoptions-callback
 [2]: #init-globaloptions
 [3]: #options
+[4]: https://img.shields.io/npm/v/npm-runner.svg?style=flat-square
+[5]: https://www.npmjs.com/package/npm-runner
