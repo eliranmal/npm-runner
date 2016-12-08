@@ -49,8 +49,10 @@ output, broken down to an array of output lines._
 
 ### Options
 
-instructions to that apply globally (when passed to [`init()`][2]), 
-or in a specific npm invocation (when passed to [`run()`][1]).
+_**Type:** `Object<*>`_  
+
+instructions to apply globally (when passed to [`init()`][2]), or for 
+a specific npm invocation (when passed to [`run()`][1]).
 
 
 #### api
